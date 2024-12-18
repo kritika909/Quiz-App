@@ -77,30 +77,28 @@ Visit http://127.0.0.1:8000 to view the application.
 * Attempt a quiz and submit answers.
 * View detailed results after quiz completion.
 
-## Project Structure
 
-quiz-application/
-├── quiz/                 # Main app for quizzes
-├── templates/            # HTML templates
-├── static/               # Static files (CSS, JS, images)
-├── db.sqlite3            # SQLite database file
-├── manage.py             # Django's management script
-├── requirements.txt      # Dependencies
-└── README.md             # Project documentation
 
 ## Models
 
 ### 1. Quiz
 `id: Primary key`
+
 `name: Name of the quiz`
+
 `numofques: Number of questions in the quiz`
 
 ### 2. Question
 `id: Primary key`
+
 `quizid: Foreign key to Quiz`
+
 `ques: The question text`
+
 `optionA, optionB, optionC, optionD: Answer options`
+
 `ans: Correct answer`
+
 `marks: Marks for the question`
 
 ### 3. Session
