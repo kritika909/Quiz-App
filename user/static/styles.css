@@ -1,0 +1,85 @@
+body{
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Title styling */
+.title p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form element styling */
+.form label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form input:focus {
+    outline: none;
+    border-color:#9334ea;
+    
+}
+
+/* Button styling */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color:#9334ea;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color:#9334ea;
+}
+
+/* Message styling */
+p {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Signup link styling */
+.signup {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.signup a {
+    color:#9334ea;
+    text-decoration: none;
+    font-size: 14px;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="quiz-result-container">
+
+<h3>{{session.quizid.name}}</h3>
+
+<p>Marks: {{session.total_marks}}</p>
+<p>Correct Answers: {{session.correct_ans}}</p>
+<p>Incorrect Answers: {{session.incorrect_ans}}</p>
+
+{% for ques in answers %}
+<div class="ques1-{% if ques.user_ans == ques.correct_ans %}correct{% else %}incorrect{% endif %}">
+    <h4>{{ques.ques}}</h4>
+    <p>{{ques.user_ans}}</p>
+    <p>{{ques.corr_ans}}</p>
+</div>
+{% endfor %}
+</div> 
+
+{% endblock %}

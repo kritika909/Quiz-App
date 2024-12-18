@@ -1,0 +1,295 @@
+body{
+    background-color: #ffff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #9334ea;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Poppins;
+}
+
+/* Navigation links */
+.navbar .nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    font-family: Poppins;
+}
+
+.navbar .nav-links a:hover {
+    color: #f0a500;
+}
+
+.footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center; /* Center-align the text */
+    padding: 15px 0; /* Add some padding */
+    font-size: 14px; /* Adjust font size */
+    position: relative; /* Keep it at the bottom of the content */
+    bottom: 0;
+    width: 100%; /* Ensure it spans the full width */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for style */
+}
+
+.footer p {
+    margin: 0; /* Remove default paragraph margin */
+    font-family: Arial, sans-serif; /* Ensure a clean font */
+}
+
+.home1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.home{
+    font-family: 'Poppins';
+    color: #9334ea;
+}
+.explore{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color:#9334ea; /* Button background color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 100px;
+    
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Adjust cards in rows for responsiveness */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center-align the cards */
+    padding: 20px;
+     /* Light background for contrast */
+}
+
+/* Individual card */
+.card {
+    background-color: #fff; /* White background */
+    border: 2px solid #ddd; /* Subtle border for separation */
+    border-radius: 8px; /* Rounded corners */
+    
+    width: 300px; /* Fixed width for uniformity */
+    padding: 20px;
+    text-align:left; /* Center text alignment */
+   
+}
+
+/* Hover effect */
+.card:hover {
+    border-color: #9334ea;
+}
+
+/* Quiz name (title) */
+.card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+/* Quiz details */
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+
+
+.quiz-container {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Quiz Title */
+.quiz-container h2 {
+    text-align: center;
+    color: #444;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.quiz-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Question Container */
+.question {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Question Text */
+.question h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Options Styling */
+.question p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Label Styling */
+.question label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+/* Input Field */
+.question input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Input Field on Focus */
+.question input[type="text"]:focus {
+    border-color: #9334ea;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+.quiz-container button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color:#9334ea;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit Button Hover Effect */
+.quiz-container button:hover {
+    background-color:#9334ea;
+}
+
+
+/* Container for quiz result */
+.quiz-result-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Header for quiz result */
+.quiz-result-container h3 {
+    text-align: center;
+    color: #2C3E50;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Styling for the marks, correct answers, and incorrect answers */
+.quiz-result-container p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #34495E;
+}
+
+/* Specific styling for correct answers */
+.ques1-correct {
+    background-color: #ECF0F1; /* Green for correct */
+    color:black;
+    border-color: green;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Specific styling for incorrect answers */
+.ques1-incorrect {
+    background-color: #ECF0F1; /* Red for incorrect */
+    color:black;
+    border-color: red;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Styling for each question and its answer */
+.ques1 {
+    background-color: #ECF0F1;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.ques1 h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2980B9;
+}
+
+.ques1 p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #7F8C8D;
+}
+
+.ques1 .user_ans {
+    font-weight: bold;
+}
+
+.ques1 .corr_ans {
+    font-style: italic;
+    color: #8E44AD;
+}

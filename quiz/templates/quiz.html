@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Available Quizzes</h2>
+<div class="card-container">
+    {% for quiz in quizzes %}
+    <a href="/quiz/{{quiz.id}}/test"><div class="card">
+        <h3>{{quiz.name}}</h3>
+        <p>No of questions: {{quiz.numofques}}</p>
+        <p>Level: {{quiz.level}}</p>
+    </div></a>
+    {% endfor %}
+
+
+
+</div>
+
+
+{% endblock %}
