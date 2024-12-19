@@ -25,7 +25,7 @@ A dynamic web-based quiz application built using Django. This application allows
 
 ## Installation
 ```
-git clone https://github.com/your-username/quiz-app.git
+git clone https://github.com/your-username/Quiz-App.git
 cd quiz-app
 ```
 
@@ -38,8 +38,8 @@ cd quiz-app
 
 ### Clone the Repository:
 ``` python
-git clone https://github.com/your-username/quiz-app.git
-cd quiz-app
+git clone https://github.com/your-username/Quiz-App.git
+cd Quiz-App
 ```
 
 ### Set Up Virtual Environment:
