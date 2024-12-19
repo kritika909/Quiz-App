@@ -27,7 +27,7 @@ def ques(request, quizid):
 
         for question in questions:
             question_id = request.POST.get("quesid")
-            answer = request.POST.get("answer")
+            answer = request.POST.get("answer").upper()
             
 
             session = Session.objects.get(id=sess)
