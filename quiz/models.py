@@ -26,19 +26,19 @@ class Question(models.Model):
     marks = models.IntegerField(default=1)
 
 
-class Session(models.Model):
-    userid = models.ForeignKey(User, on_delete=models.CASCADE)
-    quizid = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-    correct_ans = models.IntegerField(default=0)
-    incorrect_ans= models.IntegerField(default=0) 
-    taken_at = models.DateTimeField(auto_now=True)
-    total_marks = models.IntegerField(default=0)
+# class Session(models.Model):
+#     userid = models.ForeignKey(User, on_delete=models.CASCADE)
+#     quizid = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+#     correct_ans = models.IntegerField(default=0)
+#     incorrect_ans= models.IntegerField(default=0) 
+#     taken_at = models.DateTimeField(auto_now=True)
+#     total_marks = models.IntegerField(default=0)
 
-class Answers(models.Model):
-    sessionid = models.ForeignKey(Session, on_delete=models.CASCADE)
-    ques = models.CharField(max_length=255, default="None")
-    user_ans = models.CharField(max_length=1, null=True)
-    corr_ans = models.CharField(max_length=1)
+# class Answers(models.Model):
+#     sessionid = models.ForeignKey(Session, on_delete=models.CASCADE)
+#     ques = models.CharField(max_length=255, default="None")
+#     user_ans = models.CharField(max_length=1, null=True)
+#     corr_ans = models.CharField(max_length=1)
 
 
 
