@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgresql_db
+    restart: always
+    environment:
+      - POSTGRES_DB=quizapp_db
+      - POSTGRES_USER=quizapp_admin
+      - POSTGRES_PASSWORD=quizappadmin909
+    volumes:
+      - postgres_data:/var/lib/postgres/postgres_data
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    container_name: django_db
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - DEBUG="False"
+      - DATABASE_URL="postgres://quizapp_admin:quizappadmin909@db:5432/quizapp_db"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+
+volumes:
+  postgres_data:
