@@ -16,14 +16,39 @@ class Quiz(models.Model):
         return f"{self.name} ({self.level})"
 
 class Question(models.Model):
-    quizid = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-    ques = models.CharField(max_length=255)
-    optionA = models.CharField(max_length=100)
-    optionB = models.CharField(max_length=100)
-    optionC = models.CharField(max_length=100)
-    optionD = models.CharField(max_length=100)
-    ans = models.CharField(max_length=1, choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')])
-    marks = models.IntegerField(default=1)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='questions', null=True)
+    text = models.TextField(null=True)
+
+    def __str__(self):
+        return self.text or "Untitled Question "
+    
+class Option(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='options')
+    text = models.CharField(max_length=255)
+    is_correct = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.text
+    
+class QuizSession(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    selected_questions = models.ManyToManyField(Question)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.quiz.name}"
+    
+class UserResponse(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    selected_option = models.ForeignKey(Option, on_delete=models.CASCADE)
+    is_correct = models.BooleanField(default=False)
+    quiz_session = models.ForeignKey(QuizSession, on_delete=models.CASCADE, related_name='user_responses')
+
+    def __str__(self):
+        return f"{self.user.username} - {self.quiz.name} - {self.question.text}"
 
 
 # class Session(models.Model):
