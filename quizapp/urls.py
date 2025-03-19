@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from quiz.views import home, ques, quiz, result
+from quiz.views import home, ques, quiz, results, submit_quiz
 from user.views import signup, login
  
 urlpatterns = [
@@ -26,7 +26,7 @@ urlpatterns = [
     path('login/', login, name='login'),
     path('quiz/', quiz, name='quiz'),
     path('quiz/<quizid>/test', ques, name='test'),
-    # path('quiz/submit_answer/', submit_answer, name='submit_answer'),
-    path('quiz/result/<sessionid>', result, name='result'),
+    path('quiz/<quizid>/submit/', submit_quiz, name='submit_quiz'),
+    path('quiz/<quizid>/result/<score>', results, name='results'),
 
 ]

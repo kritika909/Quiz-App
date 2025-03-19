@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'quizapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'quizapp_db',
+        'USER': 'quizapp_admin',
+        'PASSWORD': 'quizappadmin909',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 

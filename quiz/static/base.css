@@ -231,7 +231,7 @@ body{
 }
 
 /* Header for quiz result */
-.quiz-result-container h3 {
+.quiz-result-container h2 {
     text-align: center;
     color: #2C3E50;
     font-size: 24px;
@@ -239,31 +239,36 @@ body{
 }
 
 /* Styling for the marks, correct answers, and incorrect answers */
-.quiz-result-container p {
+.summary p {
     font-size: 16px;
     margin: 10px 0;
     color: #34495E;
 }
 
+.results-box {
+    text-align: left;
+} 
+
 /* Specific styling for correct answers */
-.ques1-correct {
+.question-box {
     background-color: #ECF0F1; /* Green for correct */
     color:black;
-    border-color: green;
+    border-color:#333;
+    border-width: 2px;
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 15px;
+}
+.correct {
+    color: green;
+    font-weight: bold;
+}
+.incorrect {
+    color: red;
+    font-weight: bold;
 }
 
-/* Specific styling for incorrect answers */
-.ques1-incorrect {
-    background-color: #ECF0F1; /* Red for incorrect */
-    color:black;
-    border-color: red;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
+
 
 /* Styling for each question and its answer */
 .ques1 {
