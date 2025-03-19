@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Quiz, Question, UserResponse, QuizSession
+from .models import Quiz, Question, UserResponse, QuizSession, Option
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.contrib.auth.decorators import login_required
 from django.db.models import Prefetch
