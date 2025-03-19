@@ -2,20 +2,28 @@
 
 {% block content %}
 <div class="quiz-result-container">
+    <h2>Quiz Results: {{ quiz.name }}</h2>
 
-<h3>{{session.quizid.name}}</h3>
+    <div class="summary">
+        <p>Score: {{ score }}/{{ quiz.numofques }}</p>
+    </div>
 
-<p>Marks: {{session.total_marks}}</p>
-<p>Correct Answers: {{session.correct_ans}}</p>
-<p>Incorrect Answers: {{session.incorrect_ans}}</p>
+    <h3>Question-wise Breakdown</h3>
+    <div class="results-box">
+        {% for response in user_responses %}
+        <div class="question-box">
+            <p><strong>Q{{ forloop.counter }}: {{ response.question.text  }}</strong></p>
+            <p>Your Answer: <span class="{% if response.is_correct %}correct{% else %}incorrect{% endif %}">
+                {{ response.selected_option.text }}
+            </span></p>
+            <p>Correct Answer: <strong>{{ response.correct_option }}</strong></p>
+        </div>
+        {% endfor %}
+    </div>
 
-{% for ques in answers %}
-<div class="ques1-{% if ques.user_ans == ques.correct_ans %}correct{% else %}incorrect{% endif %}">
-    <h4>{{ques.ques}}</h4>
-    <p>{{ques.user_ans}}</p>
-    <p>{{ques.corr_ans}}</p>
+   
+
+    <a href="{% url 'test' quiz.id %}" class="btn">Try Again</a>
 </div>
-{% endfor %}
-</div> 
 
 {% endblock %}

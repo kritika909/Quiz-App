@@ -1,71 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="quiz-container">
-    <h2>{{questions.quizid.name}}</h2>
-     
-    <form method="post" action="">
+    <h2>{{ quiz.name }}</h2>
+    <form method="POST" action="{% url 'submit_quiz' quiz.id %}">
         {% csrf_token %}
-        <input type="hidden" name="sessionid" value="{{ sessionid }}">
-        
+
         {% for question in questions %}
-        <input type="hidden" name="quesid" value="{{ question.id }}">
         <div class="question">
-            <h4>{{question.ques}}</h4>
-            <p>A: {{question.optionA}}</p>
-            <p>B: {{question.optionB}}</p>
-            <p>C: {{question.optionC}}</p>
-            <p>D: {{question.optionD}}</p>
-            <label for="ans">Enter A,B,C or D</label>
-            <input type="text" name="answer" placeholder="Enter Option" required>
+            <h4>Q{{ forloop.counter }}: {{ question.text }}</h4>
+            {% for option in question.options.all %}
+            <div>
+                <input type="radio" name="question_{{ question.id }}" value="{{ option.id }}" required>
+                <label>{{ option.text }}</label>
+            </div>
+            {% endfor %}
         </div>
         {% endfor %}
-        <button type="submit">Submit</button>
+
+        <button type="submit" class="submit-btn">Submit Quiz</button>
     </form>
-
-                
-        
-                
-        
-                
-        
-            
-            
-            <!-- <div>
-                <button type="submit" name="answer_{{ question.id }}" value="A" class="option-btn">
-                    {{ question.optionA }}
-                </button>
-            </div>
-    
-            <div>
-                <button type="submit" name="answer_{{ question.id }}" value="B" class="option-btn">
-                    {{ question.optionB }}
-                </button>
-            </div>
-    
-            
-            <div>
-                <button type="submit" name="answer_{{ question.id }}" value="C" class="option-btn">
-                    {{ question.optionC }}
-                </button>
-            </div>
-            <div>
-                <button type="submit" name="answer_{{ question.id }}" value="D" class="option-btn">
-                    {{ question.optionD }}
-                </button>
-            </div> -->
-            
-            
-        
-    
-    
-    
-        <!-- <a href="/quiz/result/{{sessionid}}"><button type="submit" class="subbmit-button">Submit</button></a> -->
-   
+</div
 
 
-
-</div>
 
 
 {% endblock %}
